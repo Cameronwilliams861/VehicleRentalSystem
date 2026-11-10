@@ -8,6 +8,7 @@ car2 = Vehicle(vehicle_id = 501, make="Honda", model="CR-V", daily_rate=50, year
 
 customer1 = Customer(name="Cameron",customer_id="5000",email="Camjamwam@gmail.com")
 
+hertz = RentalCompany(company_name="Hertz")
 #Testing out the customer class
 customer1.get_customer_info()
 customer1.add_rental(car1)
@@ -15,9 +16,19 @@ customer1.add_rental(car2)
 customer1.get_rental_history()
 
 #Testing out the Rental class
-rental1 = Rental(rental_id = car1.vehicle_id, customer=customer1.name, vehicle = car1.model, rental_days= 5)
+rental1 = Rental(rental_id = car1.vehicle_id, customer=customer1, vehicle = car1, rental_days= 5)
 rental1.calculate_rental_cost()
 print("\n")
-rental1.complete_rental()
+is_rental_complete = rental1.complete_rental()
+print(is_rental_complete)
 print("\n")
 rental1.get_rental_details()
+
+#Testing out the Rental Company class
+#add_vehicle(vehicle)
+#register_customer(customer)
+#find_vehicle(vehicle_id)
+#find_customer(customer_id)
+#rent_vehicle(customer_id,vehicle_id,rental_days)
+#return_vehicle(rental_id)
+#generate_company_report()
